@@ -1,6 +1,7 @@
 section {
-    border: 1px solid var(--black-color);
     padding: 1rem;
+    border: 1px solid var(--black-color);
+    border-radius: 5px;
 
     header {
         margin-bottom: 1rem;
@@ -13,11 +14,12 @@ section {
     main {
         .task {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
             padding: 0.5rem 1rem;
             border: 1px solid var(--light-grey-color);
-            margin-bottom: 0.5rem;
+            border-radius: 5px;
 
             strong {
                 font-weight: 900;
@@ -25,8 +27,8 @@ section {
         }
 
         .btn {
-            border-radius: 2rem;
             padding: 0.3rem 0.4rem;
+            border-radius: 2rem;
         }
 
         & > p {

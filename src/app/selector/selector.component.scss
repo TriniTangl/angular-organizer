@@ -10,6 +10,11 @@ p {
     }
 
     i {
+        font-size: 3rem;
+        font-weight: 900;
         cursor: pointer;
+        border: 1px solid var(--light-grey-color);
+        border-radius: 5px;
+        user-select: none;
     }
 }
