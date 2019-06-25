@@ -1,0 +1,32 @@
+section {
+    border: 1px solid var(--black-color);
+    padding: 1rem;
+
+    header {
+        margin-bottom: 1rem;
+
+        strong {
+            font-weight: 900;
+        }
+    }
+
+    main {
+        .task {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--light-grey-color);
+            margin-bottom: 0.5rem;
+
+            strong {
+                font-weight: 900;
+            }
+        }
+
+        .btn {
+            border-radius: 2rem;
+            padding: 0.3rem 0.4rem;
+        }
+    }
+}

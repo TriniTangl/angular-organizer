@@ -1,0 +1,15 @@
+p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+        width: 200px;
+        margin: 0 2rem;
+        text-align: center;
+    }
+
+    i {
+        cursor: pointer;
+    }
+}
