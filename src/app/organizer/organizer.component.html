@@ -26,7 +26,7 @@
     <footer>
         <form (ngSubmit)="onSubmit()"
               [formGroup]="form">
-            <input formControlName="title" type="text">
+            <input formControlName="title" type="text" placeholder="Write something...">
             
             <button [disabled]="form.invalid"
                     class="btn btn-primary btn-block"

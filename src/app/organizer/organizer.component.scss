@@ -35,4 +35,15 @@ section {
             padding-bottom: 1rem;
         }
     }
+
+    footer {
+        input {
+            border-color: var(--black-color);
+        }
+
+        .btn {
+            padding: 1rem;
+            font-size: 20px;
+        }
+    }
 }
