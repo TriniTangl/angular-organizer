@@ -5,6 +5,7 @@ export interface Day {
     active: boolean;
     disabled: boolean;
     selected: boolean;
+    amount: number | null;
 }
 
 export interface Week {

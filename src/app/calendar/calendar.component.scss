@@ -21,6 +21,10 @@ table {
             cursor: pointer;
             background: var(--hover-td-color);
         }
+
+        span {
+            font-size: 1rem;
+        }
     }
 
     .active {

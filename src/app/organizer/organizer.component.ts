@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { switchMap } from 'rxjs/operators';
+import { CalendarTransferService } from '../shared/calendar.transfer.service';
 import { DateService } from '../shared/date.service';
 import { Task } from '../shared/task.interface';
 import { TasksService } from '../shared/tasks.service';
+import { Week } from '../shared/week.interface';
 
 @Component({
     selector: 'app-organizer',
@@ -16,7 +18,8 @@ export class OrganizerComponent implements OnInit {
 
     constructor(
         public dataService: DateService,
-        private tasksService: TasksService
+        private tasksService: TasksService,
+        private calendarTransferService: CalendarTransferService
     ) {
         this.tasks = [];
     }
@@ -46,12 +49,28 @@ export class OrganizerComponent implements OnInit {
                 this.form.reset();
             },
             err => console.error(err));
+        this.changeAmount(+1);
     }
 
     public remove(task: Task): void {
         this.tasksService.remove(task).subscribe(() => {
             this.tasks = this.tasks.filter(t => t.id !== task.id);
         }, err => console.error(err));
+        this.changeAmount(-1);
+    }
+
+    private changeAmount(step: number): void {
+        this.calendarTransferService.calendarTransfer.subscribe(
+            (data: Week[]) => {
+                data.forEach(week => {
+                    week.days.forEach(day => {
+                        if (day.value === this.dataService.date.value) {
+                            day.amount = day.amount + step;
+                        }
+                    });
+                });
+            }
+        );
     }
 
 }

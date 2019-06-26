@@ -30,6 +30,7 @@ export class TasksService {
         return this.http
             .get<Task[]>(`${TasksService.utl}/${date.format('DD-MM-YYYY')}.json`)
             .pipe(map(tasks => {
+                console.log(tasks);
                 return tasks ? Object.keys(tasks).map(key => ({...tasks[key], id: key})) : [];
             }));
     }
@@ -37,5 +38,13 @@ export class TasksService {
     public remove(task: Task): Observable<void> {
         return this.http
             .delete<void>(`${TasksService.utl}/${task.date}/${task.id}.json`);
+    }
+
+    public getAmount(date: moment.Moment): Observable<number | null> {
+        return this.http
+            .get<Task[]>(`${TasksService.utl}/${date.format('DD-MM-YYYY')}.json`)
+            .pipe(map(tasks => {
+                return tasks ? Object.keys(tasks).length : null;
+            }));
     }
 }

@@ -1,13 +1,13 @@
 <table>
     <thead>
     <tr>
-        <th>Sun</th>
         <th>Mon</th>
         <th>Tue</th>
         <th>Wed</th>
         <th>Thu</th>
         <th>Fri</th>
         <th>Sat</th>
+        <th>Sun</th>
     </tr>
     </thead>
     
@@ -18,7 +18,7 @@
             (click)="select(day.value)">
             <span [class.active]="day.active"
                   [class.selected]="day.selected">
-                {{ day.value | moment: 'ddd DD' }}
+                {{ day.value | moment: 'DD' }} | {{ day.amount | json }}
             </span>
         </td>
     </tr>
